@@ -30,13 +30,11 @@ const exec = () => {
 execute.addEventListener("click", () => {
   exec();
 });
-
 reset.addEventListener("click", () => {
   const ret = confirm(`You'll loose all your work. Are you sure?`);
   if(ret) {
     init();
+    right.src = "";
   }
 });
-
 init();
-exec();
