@@ -32,7 +32,10 @@ execute.addEventListener("click", () => {
 });
 
 reset.addEventListener("click", () => {
-  init();
+  const ret = confirm(`You'll loose all your work. Are you sure?`);
+  if(ret) {
+    init();
+  }
 });
 
 init();
