@@ -1,49 +1,39 @@
-const first = document.querySelector(".left");
-const iframe = document.querySelector("iframe");
-const btn = document.querySelector("button");
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+const execute = document.querySelector(".exec");
+const reset = document.querySelector(".reset");
 
-iframe.innerHTML = `<!DOCTYPE html>
-<html>
-<body>
-
-<p>Write your code within the script  tag and place your result in place-holder tag :</p>
-
-<p id="demo"></p>
-
-<script>
-var numbers = [175, 50, 25];
-
-document.getElementById("demo").innerHTML = numbers.reduce(myFunc);
-
-function myFunc(total, num) {
-  return total - num;
+const init = () => {
+  left.innerHTML = `
+  &lt;strong&gt;Write your script inside the script tag & add your result to place-holder:&lt;/strong&gt;
+  
+  &lt;p&gt;This is an example of removing the 3rd element from the array&lt;/p&gt;
+  
+  &lt;p&gt;So [1,2,3,4,5,6,7,8,9,10] becomes [1,2,4,5,7,8,10]&lt;/p&gt;
+  
+  &lt;p id="place-holder"&gt;Here&lt;/p&gt;
+  
+  &lt;script&gt;
+  var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var k = 3;
+  
+  var new_nums = nums.filter((x, i) => ((i + 1) % k));
+  document.getElementById("place-holder").innerHTML = new_nums;
+  
+  &lt;/script&gt;`;  
 }
-</script>
 
-</body>
-</html>`
-
-btn.addEventListener("click", () => {
-  var html = first.textContent;
-  iframe.src = "data:text/html;charset=utf-8," + encodeURI(html);
+const exec = () => {
+  var html = left.textContent;
+  right.src = "data:text/html;charset=utf-8," + encodeURI(html);
+}
+execute.addEventListener("click", () => {
+  exec();
 });
 
-
-first.addEventListener('keyup',()=>{
-  var html = first.textContent;
-  iframe.src = "data:text/html;charset=utf-8," + encodeURI(html);
-})
-
-first.addEventListener("paste", function(e) {
-  e.preventDefault();
-  var text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
+reset.addEventListener("click", () => {
+  init();
 });
 
-// var numbers = [175, 50, 25];
-
-// document.getElementById("place-holder").innerHTML = numbers.reduce(myFunc);
-
-// function myFunc(total, num) {
-//   return total - num;
-// }
+init();
+exec();

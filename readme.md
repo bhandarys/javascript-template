@@ -1,7 +1,17 @@
-* Clone the project locally
-* CD into the folder
-* Install Browser-Sync using the command `npm install -g browser-sync`
-* Run the browser-sync using the command `browser-sync start --server --files="**/*"`
-* This will watch all the files in the directory and sub-directory
 
-Make your changes in the js file and see it reflected in the browser
+* Clone the project locally
+
+* CD into the folder
+
+* In Visual Studio Code, Add Live Server extension. Start the server.
+
+* On the right pane, you can see the html code
+
+* Write your script inside the script tags (Yu can delete the example code provided)
+
+* Click execute button at the bottom and see your results on the right pane
+
+References:
+
+* https://www.w3schools.com/howto/howto_css_split_screen.asp
+* https://reactgo.com/build-your-own-html-editor/
