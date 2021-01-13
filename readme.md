@@ -10,3 +10,5 @@ References:
 
 * https://www.w3schools.com/howto/howto_css_split_screen.asp
 * https://reactgo.com/build-your-own-html-editor/
+
+[![HitCount](http://hits.dwyl.com/bhandarys/javascript-template.svg)](http://hits.dwyl.com/bhandarys/javascript-template)
